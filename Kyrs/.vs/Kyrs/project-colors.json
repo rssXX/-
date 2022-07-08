@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "9603a7ca-ec69-47ea-976c-946d1a1aa9a9": {
+      "ProjectGuid": "9603a7ca-ec69-47ea-976c-946d1a1aa9a9",
+      "DisplayName": "Kyrs",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Прочие файлы",
+      "ColorIndex": -1
+    },
+    "7836be6e-3489-43ba-a8bb-6e2482d33b74": {
+      "ProjectGuid": "7836be6e-3489-43ba-a8bb-6e2482d33b74",
+      "DisplayName": "Solution Items",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

@@ -1,0 +1,123 @@
+﻿<Window x:Class="Kyrs.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kyrs"
+        mc:Ignorable="d"
+        Title="Main2" Height="900" Width="1600">
+    <Window.Resources>
+        <Style TargetType="TabItem">
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TabItem">
+                        <Grid SnapsToDevicePixels="True"
+                              Margin="10 5 10 5">
+                            <Border CornerRadius="5"
+                                    Background="{TemplateBinding Background}"
+                                    BorderThickness="2"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    Margin="{TemplateBinding Margin}"></Border>
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              ContentSource="Header"
+                                              RecognizesAccessKey="True"
+                                              Margin="{TemplateBinding Margin}"
+                                              Focusable="False"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.25*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="0.25*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TabControl Grid.ColumnSpan="4" Grid.RowSpan="7" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" >
+            <TabItem Header="  Туры  " Background="Transparent" Height="50" Width="Auto" FontSize="15">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.15*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.15*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="0.15*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="add2" Click="add2_click" Height="50" Width="50" FontSize="20"  Grid.Column="0" Grid.Row="1" Background="Transparent" BorderThickness="1">+</Button>
+                    <Button x:Name="delete2" Click="delete2_click" Height="50" Width="50" FontSize="20"  Grid.Column="3" Grid.Row="1" Background="Transparent" BorderThickness="1">-</Button>
+                    <DataGrid  x:Name="TablTour" AutoGenerateColumns="False" IsReadOnly="True" HeadersVisibility="Column" Grid.Row="0" Grid.Column="1" Grid.RowSpan="3">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="1*" Header="Номер" Binding="{Binding Path=id}"></DataGridTextColumn>
+                            <DataGridTextColumn Width="1*" Header="Дата отправки" Binding="{Binding Path=date_dispatch}"></DataGridTextColumn>
+                            <DataGridTextColumn Width="1*" Header="Дата прибытия" Binding="{Binding Path=date_arrival}"></DataGridTextColumn>
+                            <DataGridTextColumn Width="1*" Header="Взрослые" Binding="{Binding Path=adults}"></DataGridTextColumn>
+                            <DataGridTextColumn Width="1*" Header="Дети" Binding="{Binding Path=children}"></DataGridTextColumn>
+                            <DataGridTextColumn Width="1*" Header="Стоимость" Binding="{Binding Path=cost}"></DataGridTextColumn>
+                            <DataGridTextColumn Width="1*" Header="Брибывание" Binding="{Binding Path=duration_stay}"></DataGridTextColumn>
+                            <DataGridComboBoxColumn Width="1*" Header="Отель" x:Name="colHotel" DisplayMemberPath="name" SelectedValueBinding="{Binding Path= hotel_id}"  SelectedValuePath="id"  />
+                            <DataGridComboBoxColumn Width="1*" Header="Город" x:Name="colCity" DisplayMemberPath="name" SelectedValueBinding="{Binding Path= city_id}"  SelectedValuePath="id"  />
+                            <DataGridComboBoxColumn Width="1*" Header="Работник" x:Name="colWorks" DisplayMemberPath="name" SelectedValueBinding="{Binding Path= workers_id}"  SelectedValuePath="id"  />
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Content="Редактировать" Name="BtnEdit2" Click="BtnEdit2_Click"></Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="  Контракты  " Background="Transparent" Height="50" Width="Auto" FontSize="15">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.15*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.15*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="0.15*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="add6" Click="add6_click" Height="50" Width="50" FontSize="20"  Grid.Column="0" Grid.Row="1" Background="Transparent" BorderThickness="1">+</Button>
+                    <Button x:Name="delete6" Click="delete6_click" Height="50" Width="50" FontSize="20"  Grid.Column="3" Grid.Row="1" Background="Transparent" BorderThickness="1">-</Button>
+                    <DataGrid  x:Name="TablContract" AutoGenerateColumns="False" IsReadOnly="True" HeadersVisibility="Column" Grid.Row="0" Grid.Column="1" Grid.RowSpan="3">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="1*" Header="Дата покупеи" Binding="{Binding Path=date_purchase}"></DataGridTextColumn>
+                            <DataGridTextColumn Width="1*" Header="Доп. услуги" Binding="{Binding Path=additional_services}"></DataGridTextColumn>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Content="Редактировать" Name="BtnEdit6" Click="BtnEdit6_Click"></Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
